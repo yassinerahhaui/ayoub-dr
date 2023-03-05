@@ -1,0 +1,39 @@
+@import '../../scss/grid';
+@import '../../scss/colors';
+@import '../../scss/mixins';
+
+.about-me {
+  background-color: $dark1;
+  margin: 15px;
+  border-radius: 20px;
+  color: #fcfcfc;
+  padding: 1rem;
+  text-align: center;
+  &_title {
+    border-bottom: 1px solid #fcfcfc;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    font: {
+      size: 1.5rem;
+      weight: 700 !important;
+    }
+    @media(max-width:$md) {
+      font-size: 1rem;
+    }
+    
+  }
+  &_paragraph {
+    font: {
+      weight: 600;
+      size: .9rem;
+    }
+    padding: 20px;
+    color: #fcfcfc;
+    text-align: center;
+    line-height: 1.3rem;
+    @media(max-width:$md) {
+      font-size: .7rem;
+      text-align: justify;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+@import '../../scss/grid';
+@import '../../scss/colors';
+@import '../../scss/mixins';
+
+
+.projects {
+  position: relative;
+  background-color: $dark1;
+  .projects_title {
+    @include title();
+  }
+}
+
+.carousel_box {
+  width: 100%;
+  overflow-x: hidden;
+  padding: 10px;
+  position: relative;
+  .left {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: #ffffffa2;
+    text-shadow: 0 0 .2rem #000000a2,0 0 .2rem #000000a2;
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+      color: #ffffff;
+      text-shadow: 0 0 .2rem #000000,0 0 .2rem #000000;
+    }
+  }
+  .right {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: #ffffffa2;
+    user-select: none;
+    text-shadow: 0 0 .2rem #000000a2,0 0 .2rem #000000a2;
+    cursor: pointer;
+    &:hover {
+      color: #ffffff;
+      text-shadow: 0 0 .2rem #000000,0 0 .2rem #000000;
+    }
+  }
+  .carousel {
+    $cw: 400px;
+    width: max-content;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(19,$cw);
+    transition: left 500ms ease-in-out;
+    @media(max-width: $sm) {
+      grid-template-columns: repeat(19,250px);
+    }
+    gap: 10px;
+    &-item {
+      width: $cw;
+      @media(max-width: $sm) {
+        width: 250px;
+      }
+      float: left;
+      background-color: #fff;
+      box-shadow: 0 0 .2rem #11111185,0 0 .2rem #0c0c0ca9;
+      // border: 2px solid black;
+      border-radius: 20px;
+      img {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        background-color: #000;
+        // border-bottom: 1px solid black;
+        width: 100%;
+      }
+      &_caption {
+        padding: 10px;
+        text-align: center;
+        a {
+          font-size: 13px;
+          font-weight: 600;
+          color: #212121;
+          &:hover {
+            color: #000;
+            // text-shadow: 0 0 .2rem #11111185,0 0 .2rem #0c0c0ca9;
+          }
+        }
+      }
+    }
+  }
+}
